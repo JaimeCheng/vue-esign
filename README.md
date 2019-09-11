@@ -56,14 +56,14 @@ methods: {
 ```
 3. 说明
 
-| 属性 | 说明 | 类型 | 默认值 |
-|:-: | :-- | :-: | :-: |
-|width | 画布宽度，即导出图片的宽度 | Number | 800|
-|height | 画布高度，即导出图片的高度 | Number | 300|
-|lineWidth | 画笔粗细 | Number | 4|
-|lineColor | 画笔颜色 | String | #000000 |
-|bgColor | 画布背景色，为空时画布背景透明，<br />支持多种格式 '#ccc'，'#E5A1A1'，'rgb(229, 161, 161)'，'rgba(0,0,0,.6)'，'red' | String | 空 |
-|isCrop | 是否裁剪，在画布设定尺寸基础上裁掉四周空白部分 | Boolean | false |
+| 属性 | 类型 | 默认值 | 说明 |
+| :-: | :-- | :-: | :-- |
+| width | Number | 800 | 画布宽度，即导出图片的宽度 |
+| height | Number | 300 | 画布高度，即导出图片的高度 |
+| lineWidth | 4 | Number | 画笔粗细 |
+| lineColor | String | #000000 | 画笔颜色 |
+| bgColor | String | 空 | 画布背景色，为空时画布背景透明，<br />支持多种格式 '#ccc'，'#E5A1A1'，'rgb(229, 161, 161)'，'rgba(0,0,0,.6)'，'red' |
+| isCrop | Boolean | false | 是否裁剪，在画布设定尺寸基础上裁掉四周空白部分 |
 
 两个内置方法，通过给组件设置 `ref` 调用：
 
