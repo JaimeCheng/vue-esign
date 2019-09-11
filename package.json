@@ -1,7 +1,7 @@
 {
   "name": "vue-esign",
-  "description": "A E-Signature Component of Vue.",
-  "version": "0.9.0",
+  "description": "A canvas signature component of vue",
+  "version": "1.0.0",
   "author": "JaimeCheng <403693553@qq.com>",
   "license": "MIT",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/JaimeCheng/vue-esign/issues"
   },
-  "homepage": "https://jaimecheng.github.io/vue-esign/demo/index.html",
+  "homepage": "https://jaimecheng.github.io/vue-esign/demo/",
   "keywords": [
     "vue",
     "component",
