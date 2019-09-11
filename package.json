@@ -1,7 +1,7 @@
 {
   "name": "vue-esign",
   "description": "A canvas signature component of vue",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "JaimeCheng <403693553@qq.com>",
   "license": "MIT",
   "main": "dist/index.js",
