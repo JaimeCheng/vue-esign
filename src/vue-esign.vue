@@ -8,11 +8,11 @@ export default {
   props: {
     width: {
       type: Number,
-      default: document.body.offsetWidth
+      default: 800
     },
     height: {
       type: Number,
-      default: 500
+      default: 300
     },
     lineWidth: {
       type: Number,
