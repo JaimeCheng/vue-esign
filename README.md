@@ -2,6 +2,8 @@
 
 > Canvas 手写签字 电子签名
 
+![npm](https://img.shields.io/npm/dm/vue-esign) ![GitHub package.json version](https://img.shields.io/github/package-json/v/jaimecheng/vue-esign)
+
 ## 功能
 1. 兼容 PC 和 Mobile；
 2. 画布自适应屏幕大小变化（窗口缩放、屏幕旋转时画布无需重置，自动校正坐标）；
