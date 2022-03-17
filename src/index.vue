@@ -29,6 +29,10 @@ export default {
     isCrop: {
       type: Boolean,
       default: false
+    },
+    isClearBgColor: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -235,8 +239,10 @@ export default {
         this.$refs.canvas.width,
         this.$refs.canvas.height
       )
-      this.$emit('update:bgColor', '')
-      this.$refs.canvas.style.background = 'rgba(255, 255, 255, 0)'
+      if (this.isClearBgColor) {
+        this.$emit('update:bgColor', '')
+        this.$refs.canvas.style.background = 'rgba(255, 255, 255, 0)'
+      }
       this.points = []
       this.hasDrew = false
       this.resultImg = ''

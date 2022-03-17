@@ -1,4 +1,4 @@
-import vueEsign from './vue-esign'
+import vueEsign from './index.vue'
 vueEsign.install = function (Vue) {
   if (this.installed) {
     return
@@ -8,6 +8,6 @@ vueEsign.install = function (Vue) {
 }
 export default vueEsign
 
-if (typeof window !== 'undefined' && window.Vue) {
-  window.Vue.use(vueEsign)
-}
+// if (typeof window !== 'undefined' && window.Vue) {
+//   window.Vue.use(vueEsign)
+// }
