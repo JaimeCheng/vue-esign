@@ -5,9 +5,9 @@
 ![npm](https://img.shields.io/npm/dm/vue-esign) ![GitHub package.json version](https://img.shields.io/github/package-json/v/jaimecheng/vue-esign)
 
 ## 时隔三年的更新！！支持vue3
-- **兼容vue3！！！！**
-- 新增属性 `isClearBgColor`，默认值`true`， 清空画布时(reset)是否同时清空设置的背景色(bgColor) 
-
+- **支持vue3！！！！更新依赖后，仅`bgColor`原来的`.sync`修饰符需改为vue3写法`v-model:bgColor`**;
+- 新增属性 `isClearBgColor`，默认值`true`， 清空画布时(reset)是否同时清空设置的背景色(bgColor) ；
+- 直接`npm install vue-esign@latest --save`即可，对vue2版本无任何影响；
 ## 功能
 1. 兼容 PC 和 Mobile；
 2. 画布自适应屏幕大小变化（窗口缩放、屏幕旋转时画布无需重置，自动校正坐标）；
