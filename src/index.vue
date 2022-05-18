@@ -1,5 +1,5 @@
 <template>
-  <canvas ref="canvas" @mousedown="mouseDown" @mousemove="mouseMove" @mouseup="mouseUp" 
+  <canvas ref="canvas" @mousedown="mouseDown" @mousemove="mouseMove" @mouseup="mouseUp"
   @touchstart="touchStart" @touchmove="touchMove" @touchend="touchEnd"></canvas>
 </template>
 
@@ -33,6 +33,14 @@ export default {
     isClearBgColor: {
       type: Boolean,
       default: true
+    },
+    type: {
+      type: String,
+      default: 'image/png'
+    },
+    quality: {
+      type: Number,
+      default: 1
     }
   },
   data () {
@@ -199,7 +207,9 @@ export default {
       this.points.push({x: -1, y: -1})
     },
     // 操作
-    generate () {
+    generate ({type, quality}) {
+      let type = type?type: this.type
+      let quality = quality?quality: this.quality
       const pm =  new Promise((resolve, reject) => {
         if (!this.hasDrew) {
           reject(`Warning: Not Signned!`)
@@ -209,7 +219,7 @@ export default {
         this.canvasTxt.globalCompositeOperation = "destination-over"
         this.canvasTxt.fillStyle = this.myBg
         this.canvasTxt.fillRect(0,0,this.$refs.canvas.width ,this.$refs.canvas.height)
-        this.resultImg = this.$refs.canvas.toDataURL()
+        this.resultImg = this.$refs.canvas.toDataURL(type, quality)
         var resultImg = this.resultImg
         this.canvasTxt.clearRect(0, 0, this.$refs.canvas.width ,this.$refs.canvas.height)
         this.canvasTxt.putImageData(resImgData, 0, 0)
@@ -225,7 +235,7 @@ export default {
           crop_ctx.putImageData(crop_imgData, 0, 0)
           crop_ctx.fillStyle = this.myBg
           crop_ctx.fillRect(0, 0, crop_canvas.width , crop_canvas.height)
-          resultImg = crop_canvas.toDataURL()
+          resultImg = crop_canvas.toDataURL(type, quality)
           crop_canvas = null
         }
         resolve(resultImg)
@@ -267,7 +277,7 @@ export default {
       const data = [topX, topY, btmX, btnY]
       return data
     }
-  } 
+  }
 }
 </script>
 
