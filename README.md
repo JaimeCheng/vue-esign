@@ -97,7 +97,7 @@ methods: {
 this.$refs.esign.reset()
 ```
 
-**生成图片 **
+**生成图片**
 
 ```js
 // 可选配置参数 options，在未设置format或quality属性时可在生成图片时配置 例如： {format:'image/jpeg', quality: 0.5}
