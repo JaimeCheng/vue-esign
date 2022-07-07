@@ -87,8 +87,8 @@ methods: {
 | bgColor | String | 空 | 画布背景色，为空时画布背景透明，<br />支持多种格式 '#ccc'，'#E5A1A1'，'rgb(229, 161, 161)'，'rgba(0,0,0,.6)'，'red' |
 | isCrop | Boolean | false | 是否裁剪，在画布设定尺寸基础上裁掉四周空白部分 |
 | isClearBgColor | Boolean | true | 清空画布时(reset)是否同时清空设置的背景色(bgColor) |
-| format | String | image/png | 图片格式 |
-| quality | Number | 1 | 在指定图片格式为 image/jpeg 或 image/webp的情况下，可以从 0 到 1 的区间内选择图片的质量。如果超出取值范围，将会使用默认值 0.92。其他参数会被忽略。 |
+| format | String | image/png | 生成图片格式 image/jpeg(jpg格式下生成的图片透明背景会变黑色请慎用或指定背景色)、 image/webp |
+| quality | Number | 1 | 生成图片质量；在指定图片格式为 image/jpeg 或 image/webp的情况下，可以从 0 到 1 的区间内选择图片的质量。如果超出取值范围，将会使用默认值 0.92。其他参数会被忽略。 |
 
 两个内置方法，通过给组件设置 `ref` 调用：
 
@@ -96,18 +96,12 @@ methods: {
 ```js
 this.$refs.esign.reset()
 ```
-**生成图片**
-```js
-this.$refs.esign.generate().then(res => {
-  console.log(res) // base64图片
-}).catch(err => {
-  alert(err) // 画布没有签字时会执行这里 'Not Signned'
-})
-```
 
-**生成图片 (指定图片质量压缩比)**
+**生成图片 **
+
 ```js
-this.$refs.esign.generate({format:'image/jpeg', quality: 0.5}).then(res => {
+// 可选配置参数 options，在未设置format或quality属性时可在生成图片时配置 例如： {format:'image/jpeg', quality: 0.5}
+this.$refs.esign.generate(options).then(res => {
   console.log(res) // base64图片
 }).catch(err => {
   alert(err) // 画布没有签字时会执行这里 'Not Signned'
