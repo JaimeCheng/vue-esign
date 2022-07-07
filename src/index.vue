@@ -207,9 +207,9 @@ export default {
       this.points.push({x: -1, y: -1})
     },
     // 操作
-    generate ({format, quality}) {
-      let imgFormat = format ? format: this.format
-      let imgQuality = quality ? quality: this.quality
+    generate (options) {
+      let imgFormat = options && options.format ? options.format: this.format
+      let imgQuality = options && options.quality ? options.quality: this.quality
       const pm =  new Promise((resolve, reject) => {
         if (!this.hasDrew) {
           reject(`Warning: Not Signned!`)
